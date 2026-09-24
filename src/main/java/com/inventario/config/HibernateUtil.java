@@ -1,5 +1,6 @@
 package com.inventario.config;
 
+import com.inventario.modelo.CategoriaVO;
 import com.inventario.modelo.RolVO;
 import com.inventario.modelo.UsuarioVO;
 import org.hibernate.SessionFactory;
@@ -25,19 +26,15 @@ public class HibernateUtil {
                     "hibernate.connection.url",
                     "jdbc:mysql://localhost:3306/sistem_inv?useSSL=false&serverTimezone=UTC"
             
-            );
-            
+            );          
             configuration.setProperty(
                     "hibernate.connection.username",
                     "root"
             
             );
-
-
             configuration.setProperty(
                     "hibernate.connection.password",
-                    ""
-            
+                    ""            
             );
 
             configuration.setProperty(
@@ -45,21 +42,19 @@ public class HibernateUtil {
                     "com.mysql.cj.jdbc.Driver"
             
             );
-
             configuration.setProperty(
                     "hibernate.dialect",
                     "org.hibernate.dialect.MySQLDialect"
             
-            );        
-            
+            );                   
             configuration.setProperty(
                     "hibernate.hbm2ddl.auto",
                     "update"
             
-            ); 
-            
+            );            
             configuration.addAnnotatedClass(RolVO.class);
             configuration.addAnnotatedClass(UsuarioVO.class);
+            configuration.addAnnotatedClass(CategoriaVO.class);
             
             
             return configuration.buildSessionFactory();

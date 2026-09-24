@@ -23,6 +23,6 @@
         <!-- Clases de Entidad asociadas -->
         <mapping class="com.inventario.modelo.RolVO"/>
         <mapping class="com.inventario.modelo.UsuarioVO"/>
-
+        <mapping class="com.inventario.modelo.CategoriaVO"/>
     </session-factory>
 </hibernate-configuration>
